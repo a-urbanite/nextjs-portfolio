@@ -33,7 +33,7 @@
   color: white;
 }
 
-.collapse-button {
+.CVButton {
   margin-top: 10%;
   margin-left: 10%;
   margin-right: 10%;
@@ -53,7 +53,7 @@
   font-family: 'Quicksand', sans-serif;
 }
 
-.collapse-button:hover {
+.CVButton:hover {
   background-color: #fff8f5;
   color: black
 }

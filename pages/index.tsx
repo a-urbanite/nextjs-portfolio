@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/pages/Home.module.css'
+// import pagestyles from '../styles/components/Pagewrapper.module.css'
 
 import CV from '../components/CV'
 import Collapsable from '../components/Collapsable'
@@ -10,7 +11,7 @@ import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 const Home: NextPage = () => {
   return (
     <article className='page'>
-      <h1 className={styles.title}>Alexander Städtler</h1>
+      <h1>Alexander Städtler</h1>
       <div className={styles.profileBox}>
         <img className={styles.profilePic} src='/images/profile_pic_light.png' alt='profile pic'></img>
         <div className={styles.profileBlock}>
@@ -29,7 +30,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <Collapsable collapsed={true} titleOpen="collapse content" titleClosed="Show whole CV" classname="collapse-button">
+      <Collapsable collapsed={true} titleOpen="collapse content" titleClosed="Show whole CV" btnclassname={styles.CVButton}>
         <CV/>
       </Collapsable>
     </article>

@@ -1,9 +1,10 @@
 import React from 'react'
+import styles from '../styles/components/CV.module.css'
 
 const CV = () => {
   return (
-    <div className='CV'>
-      <h2 className='CV__heading2'>EDUCATION & TRAINING</h2>
+    <div className={styles.CV}>
+      <h2 className={styles.CV__heading2}>EDUCATION & TRAINING</h2>
       <ul>
         <li>Full Stack JavaScript - School of Applied Technology 
           Intensive three month training program for full stack web development with a focus on TDD, mob programming, and applied learning.</li>
@@ -14,7 +15,7 @@ const CV = () => {
         <li>Cultural Heritage Management Assistent
           October 2008 - September 2009</li>
       </ul>
-      <h2 className='CV__heading2'>WORK EXPERIENCE</h2>
+      <h2 className={styles.CV__heading2}>WORK EXPERIENCE</h2>
       <ul>
         <li>Webmaster - Deutsches Archaologisches Institut
           April 2020 - December 2021 - Berlin, Germany
@@ -26,23 +27,23 @@ const CV = () => {
           A sequence of employments with archaeological institutes and projects. Activities spanned from office work in Berlin to Field Work in Saudi Arabia, mostly revolving around Geodata and Research Data Management.
         </li>
       </ul>
-      <h2 className='CV__heading2'>TECHNICAL SKILLS</h2>
-      <div className='CV__skillListWrapper'>
-        <div className='CV__columnA'>
-            <h3 className='CV__heading3'>Languages</h3>
+      <h2 className={styles.CV__heading2}>TECHNICAL SKILLS</h2>
+      <div className={styles.CV__skillListWrapper}>
+        <div className={styles.CV__columnA}>
+            <h3 className={styles.CV__heading3}>Languages</h3>
           <ul>
             <li>German - native</li>
             <li>English - fluent</li>
             <li>Italian - intermediate</li>
           </ul>
-          <h3 className='CV__heading3'>General</h3>
+          <h3 className={styles.CV__heading3}>General</h3>
           <ul>
             <li>JavaScript</li>
             <li>Typescript</li>
             <li>PHP (basic)</li>
             <li>R (basic)</li>
           </ul>
-          <h3 className='CV__heading3'>Backend</h3>
+          <h3 className={styles.CV__heading3}>Backend</h3>
           <ul>
             <li>NodeJS</li>
             <li>ExpressJS</li>
@@ -50,15 +51,15 @@ const CV = () => {
             <li>REST API</li>
           </ul>
         </div>
-        <div className='CV__columnB'>
-          <h3 className='CV__heading3'>Frontend</h3>
+        <div className={styles.CV__columnB}>
+          <h3 className={styles.CV__heading3}>Frontend</h3>
           <ul>
             <li>React</li>
             <li>Redux</li>
             <li>Webpack</li>
             <li>HTML/CSS</li>
           </ul>
-          <h3 className='CV__heading3'>Tools and technologies</h3>
+          <h3 className={styles.CV__heading3}>Tools and technologies</h3>
           <ul>
             <li>Visual Studio Code</li>
             <li>Docker</li>
@@ -67,7 +68,7 @@ const CV = () => {
             <li>TDD/BDD with Mocha/Jest</li>
             <li>Agile work methods CI/CD</li>
           </ul>
-          <h3 className='CV__heading3'>GeoData</h3>
+          <h3 className={styles.CV__heading3}>GeoData</h3>
           <ul>
             <li>QGIS/ArcGIS</li>
             <li>Meshlab</li>
@@ -77,9 +78,9 @@ const CV = () => {
         </div>
       </div>
       {/* <h2>DOWNLOAD</h2> */}
-      <div className='CV__downloadWrapper'>
-        <a className='CV__downloadButton' href='/w11-extra-CV_alexander_staedtler.pdf' download>Download PDF</a>
-        <a className='CV__downloadButton' href='/w11-extra-CV_alexander_staedtler.docx' download>Download DOC</a>
+      <div className={styles.CV__downloadWrapper}>
+        <a className={styles.CV__downloadButton} href='/w11-extra-CV_alexander_staedtler.pdf' download>Download PDF</a>
+        <a className={styles.CV__downloadButton} href='/w11-extra-CV_alexander_staedtler.docx' download>Download DOC</a>
       </div>
     </div>
   )

@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from '../styles/components/Collapsable.module.css'
 
-const Collapsable = ({collapsed, children, titleOpen, titleClosed, classname}:any) => {
+const Collapsable = ({collapsed, titleOpen, titleClosed, btnclassname, children}:any) => {
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
 
   return (
     <>
       <button
-        className={styles.button}
+        className={btnclassname}
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
         {isCollapsed ? titleClosed : titleOpen} 
