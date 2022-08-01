@@ -9,7 +9,7 @@ import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 
 const Home: NextPage = () => {
   return (
-    <>
+    <article className='page'>
       <h1 className={styles.title}>Alexander Städtler</h1>
       <div className={styles.profileBox}>
         <img className={styles.profilePic} src='/images/profile_pic_light.png' alt='profile pic'></img>
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
       <Collapsable collapsed={true} titleOpen="collapse content" titleClosed="Show whole CV" classname="collapse-button">
         <CV/>
       </Collapsable>
-    </>
+    </article>
   )
 }
 
