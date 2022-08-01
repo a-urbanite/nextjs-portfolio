@@ -1,0 +1,11 @@
+.button {
+  display: block;
+}
+
+.collapsed {
+  display: none;
+}
+
+.expanded {
+  display: block;
+}
