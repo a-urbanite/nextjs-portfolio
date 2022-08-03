@@ -33,6 +33,13 @@ const MainNav = ({isAuth, setIsAuth, signUserOut}: any) => {
               <li className={styles.mainNav__link}>
                 <Link href='/archaeology'>Archaeology</Link>
               </li>
+              <li className={styles.mainNav__link}>
+                <Link href='/signin'>Login</Link>
+              </li>
+              { isAuth && <li>asdadsad</li>}
+              <li className={styles.mainNav__link}>
+                <Link href='/redux-test'>redux-test</Link>
+              </li>
           </ul>
       </nav>
     );

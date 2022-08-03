@@ -1,13 +1,50 @@
+//styles
 import '../styles/globals.css'
 import '../styles/utilities.css'
+// nextjs utils?
 import type { AppProps } from 'next/app'
-import Layout from '../components/Layout'
+//hooks
+import { useEffect, useState } from 'react';
+//firebase stuff
+import {signOut} from 'firebase/auth'
+import { auth } from '../firebase-config';
+//components
+import MainNav from '../components/MainNav';
+// redux stuff
+import { Provider } from 'react-redux';
+import { counterstore } from '../redux_state.js'
 
 function MyApp({ Component, pageProps }: AppProps) {
+
+  // useEffect(() => {
+  //   // Perform localStorage action
+  //   const localSto = localStorage.getItem('key')
+  // }, [])
+  
+  // const ThemeContext = React.createContext('light');
+  
+  const [isAuth, setIsAuth] = useState<any>(undefined);
+  const [postToEdit, setPostToEdit] = useState<any>({});
+
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+        localStorage.clear()
+        setIsAuth(false)
+        window.location.pathname = "/login"
+    })
+  }
+
   return (
-    <Layout>
-      <Component {...pageProps}/>
-    </Layout>
+  <>
+    <Provider store={counterstore}>
+      <MainNav isAuth={isAuth} setIsAuth={setIsAuth}></MainNav>
+      <main> 
+        <Component {...pageProps}/>
+      </main>
+    </Provider>
+  </>
+        
+    
   )
 }
 
