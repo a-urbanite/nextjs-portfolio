@@ -1,5 +1,3 @@
-import React from 'react'
-
 const DAIWordpressPlugin = () => {
   return (
     <article className='page'>

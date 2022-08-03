@@ -1,7 +1,3 @@
-// import React from 'react'
-// import '../Home/Home.css'
-// import Pagewrapper from '../../components/PageWrapper/Pagewrapper'
-
 const Archaeology = () => {
 
   return (

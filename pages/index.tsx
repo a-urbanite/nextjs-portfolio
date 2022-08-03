@@ -2,7 +2,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/pages/Home.module.css'
-// import pagestyles from '../styles/components/Pagewrapper.module.css'
 
 import CV from '../components/CV'
 import Collapsable from '../components/Collapsable'
