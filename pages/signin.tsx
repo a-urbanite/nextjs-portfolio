@@ -15,25 +15,34 @@ import {
 import styles from "../styles/pages/signin.module.css"
 import { useRouter } from 'next/router';
 
+import { counterstore } from '../redux_state.js'
+import { authenticate } from '../redux_state';
+import { useSelector, useDispatch } from 'react-redux'
+
 
 
 const Login = ({ setIsAuth }: any) => {
 
-  // let navigate = useNavigate();
+  // const count = useSelector((state: any) => state.isauth)
   const router = useRouter()
+
   const [logInEmail, setlogInEmail] = useState<string>("");
   const [logInPassword, setlogInPassword] = useState<string>("");
 
   const signInWithEmail = async(event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    // console.log("triggered!")
-    const result = await signInWithEmailAndPassword(auth, logInEmail, logInPassword).catch(function(error) {
-      console.log(error.code);
-      console.log(error.message);
-    });
-    // console.log("RETURN OF LOGIN OBJECT",result)
+    const result = await signInWithEmailAndPassword(auth, logInEmail, logInPassword)
+      .catch(function(error) {
+        console.log(error.code);
+        console.log(error.message);
+      });
+    console.log("RETURN OF LOGIN OBJECT",typeof result!.user, result!.user)
     if(result) {
-        setIsAuth(result.user);
+        counterstore.dispatch(authenticate({
+          name: result.user.displayName,
+          email: result.user.email,
+          uid: result.user.uid
+        }))
         router.push('/')
     }
   }

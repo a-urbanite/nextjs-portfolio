@@ -15,13 +15,6 @@ import { Provider } from 'react-redux';
 import { counterstore } from '../redux_state.js'
 
 function MyApp({ Component, pageProps }: AppProps) {
-
-  // useEffect(() => {
-  //   // Perform localStorage action
-  //   const localSto = localStorage.getItem('key')
-  // }, [])
-  
-  // const ThemeContext = React.createContext('light');
   
   const [isAuth, setIsAuth] = useState<any>(undefined);
   const [postToEdit, setPostToEdit] = useState<any>({});

@@ -7,10 +7,6 @@ const counterSlice = createSlice({
   },
   reducers: {
     incremented: state => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
       state.value += 1
     },
     decremented: state => {
@@ -18,6 +14,7 @@ const counterSlice = createSlice({
     }
   }
 })
+export const { incremented, decremented } = counterSlice.actions
 
 const nameSlice = createSlice({
   name: 'name',
@@ -26,24 +23,31 @@ const nameSlice = createSlice({
   },
   reducers: {
     replaceName: (state, action) => {
-      // console.log("replaceName triggered")
-      // console.log("state before update", state)
-      // console.log("action", action)
       state.value = action.payload
-      // console.log("state after update", state)
       return state
     }
   }
 })
-
-export const { incremented, decremented } = counterSlice.actions
-
 export const { replaceName } = nameSlice.actions
+
+
+const isauthStorage = createSlice({
+  name: 'isauth',
+  initialState: {},
+  reducers: {
+    authenticate: (state, action) => {
+      state = { isauth: true, ...action.payload } 
+      return state
+    }
+  }
+})
+export const {authenticate} = isauthStorage.actions
 
 export const counterstore = configureStore({
   reducer: { 
     counter: counterSlice.reducer,
-    name: nameSlice.reducer  
+    name: nameSlice.reducer,
+    isauth: isauthStorage.reducer
   }
 })
 
