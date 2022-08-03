@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     <article className='page'>
       <h1>Alexander Städtler</h1>
       <div className={styles.profileBox}>
-        <img className={styles.profilePic} src='/images/profile_pic_light.png' alt='profile pic'></img>
+        <img className={styles.profilePic} src='https://firebasestorage.googleapis.com/v0/b/react-blog-30aa0.appspot.com/o/profile_pic_light.png?alt=media&token=95d6db8e-64b7-4a93-90cd-2bb5322dadf4' alt='profile pic'></img>
         <div className={styles.profileBlock}>
           <p className={styles.profileText}>
             Enthusiastic Fullstack Dev from Germany 

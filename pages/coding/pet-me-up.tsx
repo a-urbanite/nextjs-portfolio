@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import styles from '../../styles/pages/PetMeUp.module.css'
 

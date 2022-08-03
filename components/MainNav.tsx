@@ -19,9 +19,9 @@ const MainNav = ({isAuth, setIsAuth, signUserOut}: any) => {
               <li>
                 <Menu menuButton={<MenuButton className={styles.mainNav__link} > Coding </MenuButton>} transition>
                   <MenuItem><Link className='mainNav__subLink' href="/coding/pet-me-up"> [TS] Pet me Up! </Link></MenuItem>
-                  <MenuItem><Link className='mainNav__subLink' href="/coding/moviefinder"> [TS] Moviefinder </Link></MenuItem>
+                  <MenuItem><Link className='mainNav__subLink' href="/coding/movie-finder"> [TS] Moviefinder </Link></MenuItem>
                   <MenuItem><Link className='mainNav__subLink' href="/coding/akzisemauer"> [webdev/geodata] Akzisemauer </Link></MenuItem>
-                  <MenuItem><Link className='mainNav__subLink' href="/coding/dai-wordpress-plugin"> [PHP] Wordpress plugin </Link></MenuItem>
+                  <MenuItem><Link className='mainNav__subLink' href="/coding/wordpress-plugin"> [PHP] Wordpress plugin </Link></MenuItem>
                   <MenuItem><Link className='mainNav__subLink' href="/coding/least-cost-path-analysis"> [R] Least Cost Path analysis </Link></MenuItem>
                   {/* <SubMenu label="Styles">
                       <MenuItem>about.css</MenuItem>
@@ -29,6 +29,9 @@ const MainNav = ({isAuth, setIsAuth, signUserOut}: any) => {
                       <MenuItem>index.css</MenuItem>
                   </SubMenu> */}
                 </Menu>
+              </li>
+              <li className={styles.mainNav__link}>
+                <Link href='/archaeology'>Archaeology</Link>
               </li>
           </ul>
       </nav>
