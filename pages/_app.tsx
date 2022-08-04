@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
   <>
     <Provider store={counterstore}>
-      <MainNav isAuth={isAuth} setIsAuth={setIsAuth}></MainNav>
+      <MainNav></MainNav>
       <main> 
         <Component {...pageProps}/>
       </main>

@@ -19,11 +19,11 @@ import { counterstore } from '../redux_state.js'
 import { authenticate } from '../redux_state';
 import { useSelector, useDispatch } from 'react-redux'
 
-
-
 const Login = ({ setIsAuth }: any) => {
 
-  // const count = useSelector((state: any) => state.isauth)
+  const count = useSelector((state: any) => state.isauth)
+  const dispatch = useDispatch()
+  
   const router = useRouter()
 
   const [logInEmail, setlogInEmail] = useState<string>("");
@@ -31,20 +31,31 @@ const Login = ({ setIsAuth }: any) => {
 
   const signInWithEmail = async(event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const result = await signInWithEmailAndPassword(auth, logInEmail, logInPassword)
-      .catch(function(error) {
-        console.log(error.code);
-        console.log(error.message);
-      });
-    console.log("RETURN OF LOGIN OBJECT",typeof result!.user, result!.user)
-    if(result) {
-        counterstore.dispatch(authenticate({
-          name: result.user.displayName,
-          email: result.user.email,
-          uid: result.user.uid
-        }))
-        router.push('/')
-    }
+
+    const authObj = counterstore.dispatch(authenticate({
+      logInEmail: logInEmail,
+      logInPassword: logInPassword
+    }))
+
+    console.log("authOBJ returned from reducer", authObj)
+    // if (authObj.isauth)
+    router.push('/')
+
+
+    // const result = await signInWithEmailAndPassword(auth, logInEmail, logInPassword)
+    //   .catch(function(error) {
+    //     console.log(error.code);
+    //     console.log(error.message);
+    //   });
+    // console.log("RETURN OF LOGIN OBJECT",typeof result!.user, result!.user)
+    // if(result) {
+    //     counterstore.dispatch(authenticate({
+    //       name: result.user.displayName,
+    //       email: result.user.email,
+    //       uid: result.user.uid
+    //     }))
+    //     router.push('/')
+    // }
   }
 
   // const signInWithGoogle = () => {

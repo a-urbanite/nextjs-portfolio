@@ -4,13 +4,19 @@ import { incremented, decremented } from '../redux_state.js'
 import { replaceName } from '../redux_state.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
+import { fetchProductById } from '../redux_auth_thunk'
+import { testing } from '../redux_auth_thunk'
 
 const Reduxtest = (props: any) => {
 
   const [nameInput, setnameInput] = useState("")
   
+  const dispatch = useDispatch()
   const count = useSelector((state: any) => state.counter.value)
   const name = useSelector((state: any) => state.name.value)
+  const state = useSelector((state: any) => state)
+
+  console.log("state on pageload", state)
 
   return (
     <>
@@ -24,6 +30,10 @@ const Reduxtest = (props: any) => {
       <p>{name}</p>
       <input type="text" onChange={(event) => setnameInput(event.target.value)}></input>
       <button onClick={() => counterstore.dispatch(replaceName(nameInput))}>GO!</button>
+      <br/><br/>
+      <h2>testing thunks</h2>
+      <button onClick={() => counterstore.dispatch(fetchProductById(1))}>test</button>
+      <button onClick={() => counterstore.dispatch(testing())}>testing2</button>
     </>
   )
 }

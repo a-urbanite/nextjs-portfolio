@@ -6,9 +6,26 @@ import '@szhsin/react-menu/dist/transitions/slide.css';
 import Link from 'next/link'
 import styles from '../styles/components/MainNav.module.css'
 import { AiFillSetting } from "react-icons/ai";
+import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
+import {signOut} from 'firebase/auth'
+import { auth } from '../firebase-config';
 
 
-const MainNav = ({isAuth, setIsAuth, signUserOut}: any) => {
+const MainNav = () => {
+
+  const router = useRouter()
+  const isAuth = useSelector( (state: any) => state.authState.isauth)
+  // console.log("authstate from withing mainnav", isAuth)
+
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+        // localStorage.clear()
+        // setIsAuth(false)
+        // window.location.pathname = "/login"
+        router.push("/login")
+    })
+  }
 
     return (
       <nav className={styles.mainNav}>
@@ -33,13 +50,16 @@ const MainNav = ({isAuth, setIsAuth, signUserOut}: any) => {
               <li className={styles.mainNav__link}>
                 <Link href='/archaeology'>Archaeology</Link>
               </li>
-              <li className={styles.mainNav__link}>
-                <Link href='/signin'>Login</Link>
-              </li>
-              { isAuth && <li>asdadsad</li>}
+              { !isAuth && <li className={styles.mainNav__link}>
+                <Link href='/signin'>{isAuth? "Log out" : "Log in"}</Link>
+              </li> }
+              { isAuth && <li>INSIDE!</li>}
               <li className={styles.mainNav__link}>
                 <Link href='/redux-test'>redux-test</Link>
               </li>
+              
+              { isAuth && <button className={styles.mainNav__link}onClick={signUserOut}>Log Out</button>}
+              
           </ul>
       </nav>
     );
