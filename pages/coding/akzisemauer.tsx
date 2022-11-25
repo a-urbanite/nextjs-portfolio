@@ -32,7 +32,7 @@ const Akzisemauer = () => {
         </a>
       </p><br/>
       <p>
-        One could argue that setting up a Wordpress page barely counts as Web Development since it can be all done within the CMS' UI. 
+        One could argue that setting up a Wordpress page barely counts as Web Development since it can be all done within the CMS UI. 
         But the styling options that the Wordpress UI provides, bring you only so far. 
         If you have a visual concept that you want to realize you very quickly end up customizing the 
         template or that plugin`s style files. A this point you not only need to understand HTML and CSS but also
