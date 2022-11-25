@@ -54,10 +54,6 @@ const MainNav = () => {
                 <Link href='/signin'>{isAuth? "Log out" : "Log in"}</Link>
               </li> }
               { isAuth && <li>INSIDE!</li>}
-              <li className={styles.mainNav__link}>
-                <Link href='/redux-test'>redux-test</Link>
-              </li>
-              
               { isAuth && <button className={styles.mainNav__link}onClick={signUserOut}>Log Out</button>}
               
           </ul>
